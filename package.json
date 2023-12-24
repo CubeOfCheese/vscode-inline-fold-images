@@ -1,16 +1,16 @@
 {
-	"name": "inline-fold",
-	"displayName": "Inline fold",
-	"description": "A custom decorator that \"fold\" matching content in single line",
+	"name": "inline-fold-image-src",
+	"displayName": "Inline fold image src",
+	"description": "A custom decorator that \"fold\" matching content in single line - preset to fold img src urls in html. ",
 	"icon": "res/icon.png",
 	"version": "0.2.6",
-	"publisher": "moalamri",
-	"homepage": "https://github.com/moalamri/vscode-inline-fold",
+	"publisher": "cubeofcheese",
+	"homepage": "https://github.com/CubeOfCheese/vscode-inline-fold-images",
 	"bugs": "https://github.com/moalamri/vscode-inline-fold/issues",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/moalamri/vscode-inline-fold"
+		"url": "https://github.com/CubeOfCheese/vscode-inline-fold-images"
 	},
 	"engines": {
 		"vscode": "^1.74.0"
@@ -87,8 +87,9 @@
 					"type": "string",
 					"description": "Regex to match",
 					"scope": "language-overridable",
-					"default": "(class|className)=(({(`|))|(['\"`]))(.*?)(\\2|(\\4)})",
+					"default": "(src)=(['\"`])(.*?)\/\/(.*?)\/(.*?)(\\2)",
 					"examples": [
+						"(src)=(['\"`])(.*?)\/\/(.*?)\/(.*?)(\\2)",
 						"(class|className)=(({(`|))|(['\"`]))(.*?)(\\2|(\\4)})",
 						"(class|className)=[`'{\"]([^`'\"}]+)[`'\"}]",
 						"id=\"([a-zA-Z0-9-\\s]+)(?=\")"
@@ -105,10 +106,13 @@
 					]
 				},
 				"inlineFold.regexGroup": {
-					"type": ["string", "number"],
+					"type": [
+						"string",
+						"number"
+					],
 					"scope": "language-overridable",
 					"description": "Regex capture group number for content that will be folded",
-					"default": "6",
+					"default": "5",
 					"examples": [
 						"1",
 						"2",
@@ -143,7 +147,7 @@
 					"type": "number",
 					"scope": "language-overridable",
 					"description": "The opacity of the unfolded text (from 0 to 1)",
-					"default": 0.7,
+					"default": 1,
 					"enum": [
 						0,
 						0.1,
@@ -173,7 +177,7 @@
 					"type": "boolean",
 					"scope": "language-overridable",
 					"description": "(Optional) unfold the line when any part of the line is selected",
-					"default": false
+					"default": true
 				},
 				"inlineFold.disableInDiffEditor": {
 					"type": "boolean",
@@ -199,18 +203,21 @@
 		"watch": "tsc -watch -p ./"
 	},
 	"devDependencies": {
-		"@types/vscode": "1.74.0",
 		"@types/node": "^18.11.18",
+		"@types/vscode": "1.74.0",
 		"typescript": "4.9.4"
 	},
 	"__metadata": {
 		"id": "4dc4b505-dda3-4ac6-b839-397f8cf0adcc",
-		"publisherDisplayName": "Mohammed Alamri",
+		"publisherDisplayName": "Mohammed Alamri - modified by CubeOfCheese",
 		"publisherId": "41376028-10e6-4784-aff4-9c6be1c5c66e",
 		"isPreReleaseVersion": false,
 		"targetPlatform": "undefined",
 		"updated": true,
 		"preRelease": false,
 		"installedTimestamp": 1657117103571
+	},
+	"dependencies": {
+		"vsce": "^2.15.0"
 	}
 }
