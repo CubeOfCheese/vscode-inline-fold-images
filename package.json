@@ -4,7 +4,7 @@
 	"description": "A custom decorator that \"fold\" matching content in single line - preset to fold img src urls in html. ",
 	"icon": "res/icon.png",
 	"version": "0.2.6",
-	"publisher": "cubeofcheese",
+	"publisher": "CubeOfCheese",
 	"homepage": "https://github.com/CubeOfCheese/vscode-inline-fold-images",
 	"bugs": "https://github.com/moalamri/vscode-inline-fold/issues",
 	"license": "MIT",
@@ -87,7 +87,7 @@
 					"type": "string",
 					"description": "Regex to match",
 					"scope": "language-overridable",
-					"default": "(src)=(['\"`])(.*?)\/\/(.*?)\/(.*?)(\\2)",
+					"default": "(src)=(['\"`])((data:(.*?);base64),|((.*?)\/\/(.*?)\/))(.*?)(\\2)",
 					"examples": [
 						"(src)=(['\"`])(.*?)\/\/(.*?)\/(.*?)(\\2)",
 						"(class|className)=(({(`|))|(['\"`]))(.*?)(\\2|(\\4)})",
@@ -112,7 +112,7 @@
 					],
 					"scope": "language-overridable",
 					"description": "Regex capture group number for content that will be folded",
-					"default": "5",
+					"default": "9",
 					"examples": [
 						"1",
 						"2",
@@ -177,7 +177,7 @@
 					"type": "boolean",
 					"scope": "language-overridable",
 					"description": "(Optional) unfold the line when any part of the line is selected",
-					"default": true
+					"default": false
 				},
 				"inlineFold.disableInDiffEditor": {
 					"type": "boolean",
@@ -210,7 +210,7 @@
 	"__metadata": {
 		"id": "4dc4b505-dda3-4ac6-b839-397f8cf0adcc",
 		"publisherDisplayName": "Mohammed Alamri - modified by CubeOfCheese",
-		"publisherId": "41376028-10e6-4784-aff4-9c6be1c5c66e",
+		"publisherId": "CubeOfCheese",
 		"isPreReleaseVersion": false,
 		"targetPlatform": "undefined",
 		"updated": true,

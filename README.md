@@ -3,9 +3,14 @@
 </p>
 <br />
 
-<h2 align="center"> Inline Fold - VSCode Extension </h2>
+<h2 align="center"> Inline Fold img src - VSCode Extension </h2>
 
-### Inline Fold
+### Inline Fold img src
+
+This extension is a fork of <a href="https://github.com/moalamri/vscode-inline-fold"><i>VS Code Inline Fold</i></a>
+
+This fork is made to fold img src links in html out of the box. This is especially
+useful when using data urls. 
 
 VS Code Inline Fold extension mimics VS Code's [folding](https://code.visualstudio.com/docs/editor/codebasics#_folding) experience for inline code.
 This is especially useful when working with frameworks like Tailwind CSS which use lots of utility classes that often disfigure code visual structure. You can expand the folds by clicking on them. You can also configure the extension to target specific attributes in your markup.
